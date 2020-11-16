@@ -136,7 +136,7 @@ def total_parse_results(final_resp: list):
         [dict]: Total aggregated data.
     """
     total_resp = {
-        "total_repose": final_resp["GitHub"]["repo_count"] + final_resp["Bitbucket"]["repo_count"],
+        "total_repos": final_resp["GitHub"]["repo_count"] + final_resp["Bitbucket"]["repo_count"],
         "languages": final_resp["GitHub"]["languages"] + final_resp["Bitbucket"]["languages"],
         "total_forks": final_resp["GitHub"]["fork_count"] + final_resp["Bitbucket"]["fork_count"],
         "total_watchers": final_resp["GitHub"]["watcher_count"] + final_resp["Bitbucket"]["watcher_count"]

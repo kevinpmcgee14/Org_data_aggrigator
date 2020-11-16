@@ -171,7 +171,7 @@ Either the use of `org=x` or `github=x&bitbucket=y` is required.
 {
     {
     "Merged Totals": {
-        "total_repose": 39,
+        "total_repos": 39,
         "languages": [
             "PHP",
             "Java",
