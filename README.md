@@ -12,7 +12,7 @@ pip install -r requirements.txt
 
 ## Running the code
 
-* set two environment variables. These can be obtained in the provided JSON file, but are not stored in the repo for security: 
+* set two environment variables. These can be obtained in the provided JSON file, but are not stored in the repo for security. **If these variables are not set, a 401/403 error will be returned from the Bitbucket API:**
 
 ```
     BITBUCKET_CLIENT_ID=
@@ -31,6 +31,8 @@ You can then make requests to https:localhost:5000/:
 
 ## API Documentation
 
+### Health Check
+
 **Request**
 
 `GET /health`
@@ -48,9 +50,13 @@ Check health of app
 }
 ```
 
+### Get Github Data
+
 **Request**
 
 `GET /github/<organization>`
+
+Example: `/github/mailchimp/`
 
 **Description**
 
@@ -104,9 +110,13 @@ Get repository level and organization level data from <organization> from GitHub
 }
 ```
 
+### Get Bitbucket Data
+
 **Request**
 
 `GET /bitbucket/<organization>`
+
+Example: `/bitbucket/<organization>`
 
 **Description**
 
@@ -148,9 +158,19 @@ Get repository level and organization level data from <organization> from Bitbuc
 }
 ```
 
+### Get Merged Data
+
 **Request**
 
-`GET /merged/`
+`GET /merged/?org=x`
+
+`GET /merged/?github=x&bitbucket=y`
+
+Examples: 
+
+`/merged/?org=mailchimp`
+
+`/merged/?github=mailchimp&bitbucket=mailchimp`
 
 **Description**
 
@@ -164,7 +184,7 @@ Get merged repository level and organization level data from both Bitbucket and 
 
 `bitbucket`: name of organization in bitbucket
 
-Either the use of `org=x` or `github=x&bitbucket=y` is required.
+**Note:** Either the use of `org=x` or `github=x&bitbucket=y` is required.
 
 **Response**
 
