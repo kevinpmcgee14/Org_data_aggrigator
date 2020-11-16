@@ -159,7 +159,9 @@ Get merged repository level and organization level data from both Bitbucket and 
 **Parameters**
 
 `org`: name of organization
+
 `github`: name of organization in github
+
 `bitbucket`: name of organization in bitbucket
 
 Either the use of `org=x` or `github=x&bitbucket=y` is required.
